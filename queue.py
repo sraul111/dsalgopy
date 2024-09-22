@@ -1,43 +1,24 @@
-"""Make a Queue class using a list!
-Hint: You can use any Python list method
-you'd like! Try to write each one in as 
-few lines as possible.
-Make sure you pass the test cases too!"""
+# Initializing a queue
+queue = []
 
-class Queue:
-    def __init__(self, head=None):
-        self.storage = [head]
+# Adding elements to the queue
+queue.append('g')
+queue.append('f')
+queue.append('g')
 
-    def enqueue(self, new_element):
-        self.storage.append(new_element)
+print("Initial queue")
+print(queue)
 
-    def peek(self):
-        return self.storage[0]
+# Removing elements from the queue
+print("\nElements dequeued from queue")
+print(queue.pop(0))
+print(queue.pop(0))
+#print(queue.pop(0))
 
-    def dequeue(self):
-        return self.storage.pop(0)
-    
-# Setup
-q = Queue(1)
-q.enqueue(2)
-q.enqueue(3)
+print("\nQueue after removing elements")
+print(queue)
 
-# Test peek
-# Should be 1
-print q.peek()
+# Uncommenting print(queue.pop(0))
+# will raise and IndexError
+# as the queue is now empty
 
-# Test dequeue
-# Should be 1
-print q.dequeue()
-
-# Test enqueue
-q.enqueue(4)
-# Should be 2
-print q.dequeue()
-# Should be 3
-print q.dequeue()
-# Should be 4
-print q.dequeue()
-q.enqueue(5)
-# Should be 5
-print q.peek()
