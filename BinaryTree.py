@@ -11,10 +11,17 @@ class Node:
 
 def printInorder(root):
     if root:
-        print(f"Root val: {root.val}")
+        #print(f"Root val: {root.val}")
         printInorder(root.left)
         print(root.val)
         printInorder(root.right)
+
+
+def printPreorder(root):
+    if root:
+        print(root.val),
+        printPreorder(root.left)
+        printPreorder(root.right)
 
 
 
@@ -22,7 +29,7 @@ def printPostorder(root):
 
     if root:
 
-        print(f"Root val: {root.val}")
+       # print(f"Root val: {root.val}")
         # First recur on left child
         printPostorder(root.left)
 
