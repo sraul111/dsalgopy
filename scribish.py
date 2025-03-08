@@ -1,41 +1,36 @@
-# A simple implementation of Priority Queue
-# using Queue.
-class PriorityQueue(object):
-    def __init__(self):
-        self.queue = []
+# checking git connectivity
+# This code uses DFS to traverse the Matrix Graph
+# def dfs(matrix, row, col, visited, result):
+#     rows, cols = len(matrix), len(matrix[0])
+#     directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # Down, Up, Right, Left
 
-    def __str__(self):
-        return ' '.join([str(i) for i in self.queue])
+#     # Mark the current cell as visited and add it to the result
+#     visited[row][col] = True
+#     result.append(matrix[row][col])
 
-    # for checking if the queue is empty
-    def isEmpty(self):
-        return len(self.queue) == 0
+#     # Explore the neighbors
+#     for dx, dy in directions:
+#         new_row, new_col = row + dx, col + dy
+#         if 0 <= new_row < rows and 0 <= new_col < cols and not visited[new_row][new_col]:
+#             dfs(matrix, new_row, new_col, visited, result)
 
-    # for inserting an element in the queue
-    def insert(self, data):
-        self.queue.append(data)
+# def dfs_traversal(matrix):
+#     if not matrix or not matrix[0]:
+#         return []
 
-    # for popping an element based on Priority
-    def delete(self):
-        try:
-            max = 0
-            for i in range(len(self.queue)):
-                print("MaxValue:", max, "i value:", i)
-                if self.queue[i] > self.queue[max]:
-                    max = i
-            item = self.queue[max]
-            del self.queue[max]
-            return item
-        except IndexError:
-            print()
-            exit()
+#     rows, cols = len(matrix), len(matrix[0])
+#     visited = [[False for _ in range(cols)] for _ in range(rows)]
+#     result = []
 
-if __name__ == '__main__':
-    myQueue = PriorityQueue()
-    myQueue.insert(12)
-    myQueue.insert(1)
-    myQueue.insert(14)
-    myQueue.insert(7)
-    print(myQueue)        
-    while not myQueue.isEmpty():
-        print(myQueue.delete())
+#     # Start DFS from the top-left corner (0, 0)
+#     dfs(matrix, 0, 0, visited, result)
+#     return result
+
+# # Example usage:
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+
+# print(dfs_traversal(matrix))
